@@ -138,6 +138,7 @@ from
   world_bank_data.wdi_country
 where
   not `Region` is NULL
+COMMIT;
 """)
 ```
 
