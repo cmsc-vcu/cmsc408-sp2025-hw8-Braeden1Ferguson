@@ -61,19 +61,19 @@ from
 
 ## Task 2
 
-Explore the first 10 records in the country table.
+Explore the first 5 records in the country table.
 
 ```{python}
-## write out the first 10 records and look at the columns
+## write out the first 5 records and look at the columns
 ## Do you see any blanks or missing data?
 ## (skills: select, limit)
 
-run_sql_and_return_df(cnx,"""
+run_sql_and_return_html(cnx,"""
 select
   *
 from 
   world_bank_data.wdi_country
-limit 10;
+limit 5;
 """)
 
 ```
@@ -90,13 +90,13 @@ List all non-countries.
 ## Once you figure it out, write a query to list all the non-countries
 ## (skills: select, where)
 
-run_sql_and_return_df(cnx,"""
-select 
-  `Long Name`
-from 
+run_sql_and_return_html(cnx,"""
+SELECT 
+  `Long Name`, `Region`
+FROM 
   world_bank_data.wdi_country
-where
-  `Region` is NULL;
+WHERE 
+  region IS NULL;
 """)
 ```
 
@@ -123,7 +123,7 @@ drop table if exists peopleskills;
 drop table if exists roles;
 drop table if exists people;
 drop table if exists skills;
-DROP TABLE IF EXISTS sp25_fergusonba_user.wdi_country;
+
 
 """)
 ```
